@@ -1,18 +1,3 @@
-// var assert = require('assert');
-// const Browser = require('zombie');
-// Browser.localhost('http://localhost:3000/', 3000)
-//
-// describe('Main', function() {
-//   const browser = new Browser();
-//
-//   describe('#index()', function() {
-//     it('return Hello World!', function() {
-//       browser.visit('/', function() {
-//         browser.assert.status(404);
-//       });
-//     });
-//   });
-// });
 const app = require('../index.js');
 const assert = require('assert');
 const Browser = require('zombie');
