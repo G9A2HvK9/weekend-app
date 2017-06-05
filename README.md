@@ -6,7 +6,7 @@ I want to see a list of activities
 
 --
 
-MongoDB SetUp Document
+MongoDB SetUp Document looking like
 Parse Google Places data
 
 As a user
