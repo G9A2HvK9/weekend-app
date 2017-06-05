@@ -1,7 +1,7 @@
 {
   "name": "weekend-app",
   "version": "1.0.0",
-  "description": "As a user So I can choose a weekend activity I want to see a list of activities",
+  "description": "A web app to help people find activities to suit their budget",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
