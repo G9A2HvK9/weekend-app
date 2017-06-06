@@ -16,7 +16,7 @@ describe('Test', function() {
 
 describe('Activities schema', function() {
   it('retrieves activities list from database', function(done) {
-    ActivitiesModel.create({name: 'Football', cost: 60, tubeStation: 'Hackney Central'})
+    //ActivitiesModel.create({name: 'Football', cost: 60, tubeStation: 'Hackney Central'})
     browser.visit(url + 'activities').then(function() {
       browser.assert.text('body', 'Football');
       done();
