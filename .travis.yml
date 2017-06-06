@@ -1,6 +1,5 @@
 language: node_js
 
-"scripts": {
-  "test": "npm install"
-  "test": "npm test"
-},
+npm install
+npm update
+npm test
