@@ -16,12 +16,8 @@ describe('Test', function() {
 
 describe('Activities schema', function() {
   it('retrieves activities list from database', function(done) {
-    var bowling = new activitiesSchema({ name: 'Bowling' });
-    bowling.save(function (err) {
-      if (err) return handleError(err);
-    })
     browser.visit(url + 'activities').then(function() {
-      browser.assert.text('body', 'Bowling');
+      browser.assert.text('body', 'Football');
       done();
     });
   });

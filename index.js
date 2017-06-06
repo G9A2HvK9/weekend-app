@@ -1,9 +1,7 @@
 const express = require('express')
 const app = express()
 var mongoose = require('mongoose');
-var connection = mongoose.createConnection('mongodb://localhost:27017/weekend_test');
-var activitiesSchema = require('./db/schema')
-var activities = connection.model('activities', activitiesSchema);
+var ActivitiesModel = require('./db/schema.js');
 
 
 app.get('/', function (req, res) {
@@ -11,8 +9,11 @@ app.get('/', function (req, res) {
 })
 
 app.get('/activities', function (req, res) {
-  res.send(activities.find({name: 'Bowling'}))
+  ActivitiesModel.find({name: 'Football'}, function(err, activity){
+    res.send(activity[0].name)
+  })
 })
+
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
