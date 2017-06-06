@@ -3,6 +3,7 @@ const assert = require('assert');
 const Browser = require('zombie');
 const url = "http://localhost:3000/";
 const browser = new Browser();
+const databasecleaner = require('database-cleaner');
 var ActivitiesModel = require('../db/schema.js');
 
 describe('Test', function() {
