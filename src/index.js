@@ -1,15 +1,6 @@
-const react = require('react');
-const reactDOM = require('react-dom');
-const express = require('express');
-const app = express();
-var mongoose = require('mongoose');
-var ActivitiesModel = require('./db/schema.js');
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-
-const element = (<h1>Hello World</h1>)
-reactDOM.render(element, document.getElementById('route'))
-
-
-// app.listen(3000, function () {
-//    console.log('Example app listening on port 3000!');
-// });
+const name = 'Bailey'
+const element = <h1>Hello {name}</h1>
+ReactDOM.render(element, document.getElementById('route'))
