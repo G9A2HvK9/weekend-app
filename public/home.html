@@ -22,8 +22,8 @@
       function callback(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           for (var i = 0; i < results.length; i++) {
-            createMarker(results[i]);
             if ( results[i].price_level != undefined ) {
+              createMarker(results[i]);
               displayName(results[i]);
           }
         }
@@ -43,9 +43,22 @@
 
       function displayName(place) {
         var placeName = place.name;
-        var placeCost = place.price_level;
+        var placeCost = function() {
+          if (place.price_level === 1) {
+            return '£';
+          }
+          else if (place.price_level === 2) {
+            return '££';
+          }
+          else if (place.price_level === 3) {
+            return '£££';
+          }
+          else {
+            return '££££';
+          };
+        };
         var nameDisplay = document.getElementById('names');
-        nameDisplay.innerHTML += "<div>Name: "+placeName+" Cost: "+placeCost+"</div>";
+        nameDisplay.innerHTML += "<div>Name: "+placeName+" Cost: "+placeCost()+"</div>";
       }
     }
   }
