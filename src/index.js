@@ -1,6 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+var mongoose = require('mongoose');
+var ActivitiesModel = require('./db/schema.js');
 
-const name = 'Bailey'
-const element = <h1>Hello {name}</h1>
-ReactDOM.render(element, document.getElementById('route'))
+
+function filter() {
+  const activity = ActivitiesModel.find()
+  ReactDOM.render(activity, document.getElementById('route'))
+}
