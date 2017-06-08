@@ -3,9 +3,14 @@ const app = express()
 var mongoose = require('mongoose');
 var ActivitiesModel = require('./db/schema.js');
 
+app.use(express.static(__dirname + '/public'));
 
-app.get('/', function (req, res) {
+app.get('/home', function (req, res) {
   res.sendFile(__dirname + '/public/home.html')
+})
+
+app.get('/test', function (req, res) {
+  res.sendFile(__dirname + '/public/index.html')
 })
 
 app.get('/activities', function (req, res) {

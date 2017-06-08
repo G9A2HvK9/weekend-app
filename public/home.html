@@ -1,81 +1,15 @@
 <html>
 <head>
   <title>Weekend App</title>
+  <link rel="stylesheet" href="index.css" type="text/css" />
   <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOokwdlJH2PA82vZ1lrvf2GXOXBtS96X8&libraries=places&callback=initMap">
-    </script>
-  <script>
-    function initMap() {
-      var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 51.517152, lng: -0.073356},
-        zoom: 15
-      });
-
-      var infowindow = new google.maps.InfoWindow();
-      var service = new google.maps.places.PlacesService(map);
-
-      service.nearbySearch({
-        location: {lat: 51.517152, lng: -0.073356},
-        radius: 2000,
-        type: ['cafe']
-      }, callback);
-      function callback(results, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
-          for (var i = 0; i < results.length; i++) {
-            if ( results[i].price_level != undefined ) {
-              createMarker(results[i]);
-              displayName(results[i]);
-          }
-        }
-      }
-      function createMarker(place) {
-        var placeLoc = place.geometry.location;
-        var marker = new google.maps.Marker({
-          map: map,
-          position: place.geometry.location
-        });
-
-        google.maps.event.addListener(marker, 'click', function() {
-          infowindow.setContent(place.name);
-          infowindow.open(map, this);
-        });
-      }
-
-      function displayName(place) {
-        var placeName = place.name;
-        var placeCost = function() {
-          if (place.price_level === 1) {
-            return '£';
-          }
-          else if (place.price_level === 2) {
-            return '££';
-          }
-          else if (place.price_level === 3) {
-            return '£££';
-          }
-          else {
-            return '££££';
-          };
-        };
-        var nameDisplay = document.getElementById('names');
-        nameDisplay.innerHTML += "<div>Name: "+placeName+" Cost: "+placeCost()+"</div>";
-      }
-    }
-  }
-    </script>
-
-    <style>
-    #map {
-      height: 80%;
-      width: 80%;
-    }
-    </style>
-
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOokwdlJH2PA82vZ1lrvf2GXOXBtS96X8&libraries=places">
+  </script>
 </head>
 <body>
+  <script type='text/javascript' src='./results.js'></script>
   <h1>We have a map!</h1>
   <div id='map'></div>
   <div id='names'></div>
-  <div id='cost'></div>
 </body>
 </html>
