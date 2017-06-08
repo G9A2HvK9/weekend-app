@@ -1,0 +1,51 @@
+#filter-container {
+  background-color: red;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  height: 200px;
+  margin-top: 40px;
+}
+
+#price {
+  background-color: yellow;
+  width: 20%;
+  float: left;
+}
+
+#rating {
+  background-color: yellow;
+  width: 20%;
+  float: left;
+}
+
+#type {
+  background-color: yellow;
+  width: 20%;
+  float: left;
+}
+
+#map {
+  background-color: blue;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  height: 400px;
+}
+
+#results {
+  background-color: green;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  height: 200px;
+}
+
+#results-inner {
+  padding: 20px;
+}
+
+.searchResult {
+  margin: auto;
+  font-size: 50px;
+}
