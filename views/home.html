@@ -1,24 +1,24 @@
 <html>
 <head>
   <title>Weekend App</title>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOokwdlJH2PA82vZ1lrvf2GXOXBtS96X8&libraries=places"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAOokwdlJH2PA82vZ1lrvf2GXOXBtS96X8&libraries=places&callback=initMap">
+    </script>
   <script>
-    var map;
-    var center = new google.maps.LatLng(51.517152, -0.073356);
-    function initialize() {
-      map = new google.maps.Map(document.getElementById('map'), {
-        center: center,
+    function initMap() {
+      var map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: 51.517152, lng: -0.073356},
         zoom: 15
       });
 
-      infowindow = new google.maps.InfoWindow();
+      var infowindow = new google.maps.InfoWindow();
       var service = new google.maps.places.PlacesService(map);
+
       service.nearbySearch({
-        location: center,
+        location: {lat: 51.517152, lng: -0.073356},
         radius: 2000,
         type: ['store']
       }, callback);
-
       function callback(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
           for (var i = 0; i < results.length; i++) {
@@ -26,7 +26,6 @@
           }
         }
       }
-
       function createMarker(place) {
         var placeLoc = place.geometry.location;
         var marker = new google.maps.Marker({
@@ -39,8 +38,24 @@
           infowindow.open(map, this);
         });
       }
+
+      service.getDetails({
+        placeId: 'ChIJN1t_tDeuEmsRUsoyG83frY4'
+      }, function(place, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          var marker = new google.maps.Marker({
+            map: map,
+            position: place.geometry.location
+          });
+          google.maps.event.addListener(marker, 'click', function() {
+            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' +
+              'Place ID: ' + place.place_id + '<br>' +
+              place.formatted_address + '</div>');
+            infowindow.open(map, this);
+          });
+        }
+      });
     }
-    google.maps.event.addDomListener(window, 'load', initialize);
   </script>
   <style>
   html, body, #map, #names {
@@ -52,6 +67,5 @@
 <body>
   <h1>We have a map!</h1>
   <div id='map'></div>
-  <p id='names'></p>
 </body>
 </html>
