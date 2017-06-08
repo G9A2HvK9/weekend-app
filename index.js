@@ -5,7 +5,7 @@ var ActivitiesModel = require('./db/schema.js');
 
 
 app.get('/', function (req, res) {
-  res.send('Hello World!')
+  res.sendFile(__dirname + '/views/home.html')
 })
 
 app.get('/activities', function (req, res) {
