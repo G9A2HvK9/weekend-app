@@ -46,6 +46,7 @@
 
       var placeName;
       var placeCost;
+      var nameDisplay;
 
       function displayName(place) {
         placeName = place.name;
@@ -63,70 +64,112 @@
             return '££££';
           };
         };
-        var nameDisplay = document.getElementById('results');
+        nameDisplay = document.getElementById('results');
       }
       nameDisplay.innerHTML += "<div>Name: "+placeName+" Cost: "+placeCost()+"</div>";
     }
   };
   </script>
   <style>
-  #filter-container {
-    background-color: red;
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-    height: 200px;
-    margin-top: 40px;
-  }
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
 
-  #price {
-    background-color: yellow;
-    width: 20%;
-    float: left;
-  }
+    #filter-container {
+      background-color: red;
+      margin: auto;
+      width: 50%;
+      padding: 10px;
+      height: 200px;
+      margin-top: 40px;
+    }
 
-  #rating {
-    background-color: yellow;
-    width: 20%;
-    float: left;
-  }
+    #price {
+      background-color: yellow;
+      width: 20%;
+      float: left;
+    }
 
-  #type {
-    background-color: yellow;
-    width: 20%;
-    float: left;
-  }
+    #rating {
+      background-color: yellow;
+      width: 20%;
+      float: left;
+    }
 
-  #map {
-    padding: 100px;
-    position: absolute;
-    width: 50%;
-    height: 50%;
-  }
+    #type {
+      background-color: yellow;
+      width: 20%;
+      float: left;
+    }
 
-  #results {
-    background-color: green;
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-    height: 200px;
-  }
+    #map {
+      padding: 100px;
+      position: relative;
+      width: 50%;
+      height: 50%;
+    }
 
-  #results-inner {
-    padding: 20px;
-  }
+    #results {
+      background-color: green;
+      margin: auto;
+      width: 50%;
+      padding: 10px;
+      height: 200px;
+    }
 
-  .searchResult {
-    margin: auto;
-    font-size: 50px;
-  }
+    #results-inner {
+      padding: 20px;
+    }
+
+    .searchResult {
+      margin: auto;
+      font-size: 50px;
+    }
   </style>
 </head>
 <body>
   <h1>We have a map!</h1>
-  <div id='map'></div>
-  <div id='names'></div>
-  <div id='cost'></div>
-  <div id='nameDisplay'></div>
+  <div id="filter-container">
+    <div id="price">
+      <form>
+        <input type="radio" name="price" value="£" checked> Free<br>
+        <input type="radio" name="price" value="£" > £<br>
+        <input type="radio" name="price" value="££"> ££<br>
+        <input type="radio" name="price" value="£££"> £££<br>
+        <input type="radio" name="price" value="£££"> ££££
+      </form>
+    </div>
+
+    <div id="rating">
+      <form>
+        <input type="radio" name="rating" value="1" checked> *<br>
+        <input type="radio" name="rating" value="2" > **<br>
+        <input type="radio" name="rating" value="3"> ***<br>
+        <input type="radio" name="rating" value="4"> ****<br>
+        <input type="radio" name="rating" value="5"> *****
+      </form>
+    </div>
+
+    <div id="type">
+      <form>
+        <select>
+          <option value="default">What do you want to do?</option>
+          <option value="saab">Drinks &#38; Dining</option>
+          <option value="opel">Culture</option>
+          <option value="audi">Outdoors</option>
+          <option value="saab">Beauty &#38; Relaxation</option>
+          <option value="opel">Kids</option>
+          <option value="audi">Shopping</option>
+          <option value="saab">Entertainment</option>
+          <option value="opel">Fitness</option>
+        </select>
+      </form>
+    </div>
+  </div>
+  <div id="map"></div>
+  <div id="results">
+    <div id="results-inner"></div>
+  </div>
 </body>
 </html>
