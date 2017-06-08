@@ -4,7 +4,10 @@
   "description": "A web app to help people find activities to suit their budget",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "mocha",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
@@ -20,6 +23,11 @@
     "express": "^4.15.3",
     "mocha": "^3.4.2",
     "mongoose": "^4.10.4",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-scripts": "^1.0.7",
+    "react-slick": "^0.14.11",
+    "slick-carousel": "^1.6.0",
     "zombie": "^5.0.5"
   }
 }
