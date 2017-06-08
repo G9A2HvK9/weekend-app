@@ -1,5 +1,53 @@
-<div id="filter"></div>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Weekend App</title>
+<link rel="stylesheet" type="text/css" href="index.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
+</head>
 
-<div id="map"></div>
+<body>
+  <div id="filter-container">
+    <div id="price"><form>
+  <input type="radio" name="price" value="£" checked> Free<br>
+  <input type="radio" name="price" value="£" > £<br>
+  <input type="radio" name="price" value="££"> ££<br>
+  <input type="radio" name="price" value="£££"> £££<br>
+  <input type="radio" name="price" value="£££"> ££££
+</div>
+</form>
 
-<div id="results"></div>
+  <div id="rating"><form>
+<input type="radio" name="rating" value="1" checked> *<br>
+<input type="radio" name="rating" value="2" > **<br>
+<input type="radio" name="rating" value="3"> ***<br>
+<input type="radio" name="rating" value="4"> ****<br>
+<input type="radio" name="rating" value="5"> *****
+</div>
+</form>
+
+<div id="type"><form>
+  <select>
+  <option value="default">What do you want to do?</option>
+  <option value="saab">Drinks &#38; Dining</option>
+  <option value="opel">Culture</option>
+  <option value="audi">Outdoors</option>
+  <option value="saab">Beauty &#38; Relaxation</option>
+  <option value="opel">Kids</option>
+  <option value="audi">Shopping</option>
+  <option value="saab">Entertainment</option>
+  <option value="opel">Fitness</option>
+</select>
+</div>
+</div>
+  <div id="map"></div>
+
+  <div id="results">
+<div id="results-inner">
+</div>
+  </div>
+
+</body>
+
+</html>

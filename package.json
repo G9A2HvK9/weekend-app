@@ -8,7 +8,7 @@
     "build": "react-scripts build",
     "test": "mocha",
     "eject": "react-scripts eject"
-    },
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/G9A2HvK9/weekend-app.git"
@@ -26,6 +26,8 @@
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-scripts": "^1.0.7",
+    "react-slick": "^0.14.11",
+    "slick-carousel": "^1.6.0",
     "zombie": "^5.0.5"
   }
 }
