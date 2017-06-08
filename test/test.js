@@ -23,3 +23,12 @@ describe('Activities schema', function() {
     });
   });
 });
+
+describe('Home Page', function() {
+  it("Has a map displayed", function(done) {
+    browser.visit(url).then(function() {
+      browser.assert.element('#map');
+      done();
+    });
+  });
+});
