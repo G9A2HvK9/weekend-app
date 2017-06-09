@@ -1,7 +1,7 @@
 const app = require('../app.js');
 const assert = require('assert');
 const Browser = require('zombie');
-const url = "http://localhost:3000/";
+const url = 'http://localhost:3000/';
 const browser = new Browser();
 
 describe('Home page', function() {
