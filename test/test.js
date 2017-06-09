@@ -17,9 +17,15 @@ describe('Home page', function() {
     });
   });
 
-  it('displays specific place name on the page', function() {
+  it('displays specific place name', function() {
     browser.visit(url).then(function() {
       browser.assert.text('body', 'Costa')
+    });
+  });
+
+  it('displays specific place cost range', function() {
+    browser.visit(url).then(function() {
+      browser.assert.text('body', '££')
     });
   });
 });
