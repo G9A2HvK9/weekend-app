@@ -9,42 +9,62 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <header></header>
+  <header>Header</header>
   <div id="description-container">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+       sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   </div>
     <div id="price">
+      <div id="title"><a href="">Plan by budget</a></div>
       <form>
-        <input type="radio" name="price" value="£" checked> Free<br>
-        <input type="radio" name="price" value="£" > £<br>
-        <input type="radio" name="price" value="££"> ££<br>
-        <input type="radio" name="price" value="£££"> £££<br>
-        <input type="radio" name="price" value="£££"> ££££
+        <input id="free" type="radio" name="price" value="free" checked>
+        <label for="free">Free</label>
+        <input id="£" type="radio" name="price" value="£" >
+        <label for="£">£</label>
+        <input id="££" type="radio" name="price" value="££">
+        <label for="££">££</label>
+        <input id="£££" type="radio" name="price" value="£££">
+        <label for="£££">£££</label>
+        <input id="££££" type="radio" name="price" value="££££">
+        <label for="££££">££££</label>
       </form>
     </div>
 
     <div id="rating">
+      <div id="title"><a href="">Plan by rating</a></div>
       <form>
-        <input type="radio" name="rating" value="1" checked> *<br>
-        <input type="radio" name="rating" value="2" > **<br>
-        <input type="radio" name="rating" value="3"> ***<br>
-        <input type="radio" name="rating" value="4"> ****<br>
-        <input type="radio" name="rating" value="5"> *****
+        <input id="1" type="radio" name="rating" value="1">
+        <label for="1">⭐</label>
+        <input id="2" type="radio" name="rating" value="2" >
+        <label for="2">⭐⭐</label>
+        <input id="3" type="radio" name="rating" value="3">
+        <label for="3">⭐⭐⭐</label>
+        <input id="4" type="radio" name="rating" value="4">
+        <label for="4">⭐⭐⭐⭐</label>
+        <input id="5" type="radio" name="rating" value="5" checked>
+        <label for="5">⭐⭐⭐⭐⭐</label>
       </form>
     </div>
 
     <div id="type">
+      <div id="title"><a href="">Plan by activity type</a></div>
       <form>
-        <select>
-          <option value="default">What do you want to do?</option>
-          <option value="saab">Drinks &#38; Dining</option>
-          <option value="opel">Culture</option>
-          <option value="audi">Outdoors</option>
-          <option value="saab">Beauty &#38; Relaxation</option>
-          <option value="opel">Kids</option>
-          <option value="audi">Shopping</option>
-          <option value="saab">Entertainment</option>
-          <option value="opel">Fitness</option>
-        </select>
+        <input id="drinks-dining" type="radio" name="activity-type" value="drinks-dining">
+        <label for="drinks-dining">🍷🍴</label>
+        <input id="culture" type="radio" name="activity-type" value="culture" >
+        <label for="culture">🎨 🎭</label>
+        <input id="outdoors" type="radio" name="activity-type" value="outdoors">
+        <label for="outdoors">🌲 🌻</label>
+        <input id="beauty" type="radio" name="activity-type" value="beauty">
+        <label for="beauty">💅 💆</label>
+        <input id="kids" type="radio" name="activity-type" value="kids">
+        <label for="kids">👨‍👩‍👦‍👦 👶</label>
+        <input id="shopping" type="radio" name="activity-type" value="shopping">
+        <label for="shopping">🛍 🛍</label>
+        <input id="entertainment" type="radio" name="activity-type" value="entertainment">
+        <label for="entertainment">🎥 🎸</label>
+        <input id="fitness" type="radio" name="activity-type" value="fitness">
+        <label for="fitness">🎾 🏋️</label>
       </form>
     </div>
   <div id="map"></div>
