@@ -36,9 +36,13 @@ function initMap() {
       });
     }
 
+    var placeName;
+    var placeCost;
+    var nameDisplay;
+
     function displayName(place) {
-      var placeName = place.name;
-      var placeCost = function() {
+      placeName = place.name;
+      placeCost = function() {
         if (place.price_level === 1) {
           return '£';
         }
@@ -52,9 +56,8 @@ function initMap() {
           return '££££';
         };
       };
-
-      var nameDisplay = document.getElementById('results');
-      nameDisplay.innerHTML += "<div>Name: "+placeName+" Cost: "+placeCost()+"</div>";
+      nameDisplay = document.getElementById('results');
     }
+    nameDisplay.innerHTML += "<div>Name: "+placeName+" Cost: "+placeCost()+"</div>";
   }
 };
