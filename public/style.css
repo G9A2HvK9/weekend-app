@@ -31,8 +31,7 @@ html, body {
 }
 
 #map {
-  padding: 100px;
-  position: relative;
+  margin: auto;
   width: 50%;
   height: 50%;
 }
