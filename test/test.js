@@ -11,6 +11,12 @@ describe('Home page', function() {
     });
   });
 
+  it('has a place name as the result of a search', function() {
+    browser.visit(url).then(function() {
+      browser.assert.element('#results')
+    });
+  });
+
   it('displays names on the page', function() {
     browser.visit(url).then(function() {
       browser.assert.text('body', 'Costa')
