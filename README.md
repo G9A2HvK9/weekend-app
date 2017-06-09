@@ -4,11 +4,6 @@ As a user
 So I can choose a weekend activity
 I want to see a list of activities
 
---
-
-MongoDB SetUp Document looking like
-Parse Google Places data
-
 As a user
 So I can see what my weekend activity will cost
 I want to see prices related to activities

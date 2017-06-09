@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/G9A2HvK9/weekend-app#readme",
   "dependencies": {
+    "eslint": "^3.19.0",
     "express": "^4.15.3",
     "mocha": "^3.4.2",
-    "mongoose": "^4.10.4",
     "zombie": "^5.0.5"
   }
 }
