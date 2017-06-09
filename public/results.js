@@ -2,10 +2,10 @@ function initMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 51.517152, lng: -0.073356},
     zoom: 15
-  });
+  })
 
-  var infowindow = new google.maps.InfoWindow();
-  var service = new google.maps.places.PlacesService(map);
+  var infowindow = new google.maps.InfoWindow()
+  var service = new google.maps.places.PlacesService(map)
 
   var drinks = ['bar']
   var culture = ['art_gallery', 'book_store', 'church', 'cemetery', 'hindu_temple', 'library', 'mosque', 'museum', 'synagogue']
@@ -23,49 +23,51 @@ function initMap() {
     location: {lat: 51.517152, lng: -0.073356},
     radius: 5000,
     types: nightOut,
-  }, callback);
+  }, callback)
+
   function callback(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
-      var htmlArray = [];
+      var htmlArray = []
       for (var i = 0; i < results.length; i++) {
-        createMarker(results[i]);
-        htmlArray.push(displayName(results[i]));
-      };
-      var display = document.getElementById('results-inner');
-      display.innerHTML = htmlArray.join('--');
-    };
-  };
+        createMarker(results[i])
+        htmlArray.push(displayName(results[i]))
+      }
+      var display = document.getElementById('results-inner')
+      display.innerHTML = htmlArray.join('--')
+    }
+  }
+
   function createMarker(place) {
-    var placeLoc = place.geometry.location;
+    var placeLoc = place.geometry.location
     var marker = new google.maps.Marker({
       map: map,
       position: place.geometry.location
-    });
+    })
 
     google.maps.event.addListener(marker, 'click', function() {
-      infowindow.setContent(place.name);
-      infowindow.open(map, this);
-    });
+      infowindow.setContent(place.name)
+      infowindow.open(map, this)
+    })
   }
 
   function displayName(place) {
-    var placeName = place.name;
-    var placeRating = place.rating;
-    
+    var placeName = place.name
+    var placeRating = place.rating
+
     placeCost = function() {
       if (place.price_level === 1) {
-        return '£';
+        return '£'
       }
       else if (place.price_level === 2) {
-        return '££';
+        return '££'
       }
       else if (place.price_level === 3) {
-        return '£££';
+        return '£££'
       }
       else {
-        return '££££';
-      };
-    };
-    return "<div class='results-inner'>Name: " + placeName + " Cost: " + placeCost() + "Rating: " + placeRating + "</div>";
+        return '££££'
+      }
+    }
+    return "<div class='results-inner'>Name: " + placeName + " Cost: " + placeCost() + "Rating: " + placeRating + "</div>"
   }
 }
