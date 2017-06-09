@@ -19,7 +19,6 @@
   "dependencies": {
     "express": "^4.15.3",
     "mocha": "^3.4.2",
-    "mongoose": "^4.10.4",
     "zombie": "^5.0.5"
   }
 }
