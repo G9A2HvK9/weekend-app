@@ -58,6 +58,6 @@ function initMap() {
       };
       nameDisplay = document.getElementById('results');
     }
-    nameDisplay.innerHTML += "<div>Name: "+placeName+" Cost: "+placeCost()+"</div>";
+    nameDisplay.innerHTML += "<div class='results-inner'>Name: "+placeName+" Cost: "+placeCost()+"</div>";
   }
 };
