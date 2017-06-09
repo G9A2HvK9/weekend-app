@@ -74,6 +74,8 @@ form input[type="radio"]:checked+label {
   overflow: hidden;
   border-left: solid #11303F;
   border-right: solid #11303F;
+  position: relative;
+  bottom: 10px;
 }
 
 #type {
@@ -85,12 +87,19 @@ form input[type="radio"]:checked+label {
   height: 50px;
   border-left: solid #11303F;
   border-right: solid #11303F;
+  position: relative;
+  bottom: 10px;
 }
 
 #map {
-  width: 100%;
+  width: 103%;
   height: 20%;
-  overflow: visible;
+}
+
+#map-container {
+  height: 200px;
+  width: 100%;
+  text-align: center;
   border-left: solid #11303F;
   border-right: solid #11303F;
 }
