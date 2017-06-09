@@ -17,7 +17,7 @@ describe('Home page', function() {
     });
   });
 
-  it('displays names on the page', function() {
+  it('displays specific place name on the page', function() {
     browser.visit(url).then(function() {
       browser.assert.text('body', 'Costa')
     });
