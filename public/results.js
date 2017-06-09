@@ -68,6 +68,6 @@ function initMap() {
         return '££££'
       }
     }
-    return "<div class='results-inner'>Name: " + placeName + " Cost: " + placeCost() + "Rating: " + placeRating + "</div>"
+    return "<div class='results-inner'>Name: " + placeName + " Cost: " + placeCost() + " Rating: " + placeRating + "</div>"
   }
 }
