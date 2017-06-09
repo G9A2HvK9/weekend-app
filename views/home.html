@@ -29,7 +29,7 @@
       service.nearbySearch({
         location: {lat: 51.517152, lng: -0.073356},
         radius: 5000,
-        types: drinks
+        types: nightOut,
       }, callback);
       function callback(results, status) {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -38,7 +38,7 @@
             createMarker(results[i]);
             htmlArray.push(createHTML(results[i]));
           };
-          var display = document.getElementById('names');
+          var display = document.getElementById('display');
           display.innerHTML = htmlArray.join('');
 
         };
@@ -59,19 +59,6 @@
       function createHTML(place){
         return '<div>'+place.name+' | Rating: '+place.rating+' | Expense: '+place.price_level+'</div>';
       };
-
-      function displayName(place) {
-        var placeName = place.name;
-        var nameDisplay = document.getElementById('names')
-        nameDisplay.innerHTML = "<div>"+placeName+"</div>";
-      }
-
-      function displayCost(place) {
-        var placeCost = place.price_level;
-        var costDisplay = document.getElementById('cost');
-        costDisplay.innerHTML = "<div>"+placeCost+"</div>";
-        console.log(placeCost);
-      }
     }
   </script>
   <style>
@@ -84,7 +71,7 @@
 <body>
   <h1>We have a map!</h1>
   <div id='map'></div>
-  <div id='names'></div>
+  <div id='display'></div>
   <div id='cost'></div>
 </body>
 </html>
