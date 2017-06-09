@@ -29,11 +29,10 @@ function initMap() {
       var htmlArray = [];
       for (var i = 0; i < results.length; i++) {
         createMarker(results[i]);
-        htmlArray.push(createHTML(results[i]));
+        htmlArray.push(displayName(results[i]));
       };
       var display = document.getElementById('results-inner');
-      display.innerHTML = htmlArray.join('');
-
+      display.innerHTML = htmlArray.join('--');
     };
   };
   function createMarker(place) {
@@ -49,7 +48,24 @@ function initMap() {
     });
   }
 
-  function createHTML(place){
-    return '<div>'+place.name+' | Rating: '+place.rating+' | Expense: '+place.price_level+'</div>';
-  };
+  function displayName(place) {
+    var placeName = place.name;
+    var placeRating = place.rating;
+    
+    placeCost = function() {
+      if (place.price_level === 1) {
+        return '£';
+      }
+      else if (place.price_level === 2) {
+        return '££';
+      }
+      else if (place.price_level === 3) {
+        return '£££';
+      }
+      else {
+        return '££££';
+      };
+    };
+    return "<div class='results-inner'>Name: " + placeName + " Cost: " + placeCost() + "Rating: " + placeRating + "</div>";
+  }
 }
